@@ -10,12 +10,12 @@ const PORT = process.env.APP_PORT || 3001;
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
+// app.use("*", (req, res, next) => {
+//   res.status(404).send({ message: "Route not found" });
+// });
+
 app.get("/", (req, res) => {
   res.send("test server");
-});
-
-app.use("*", (req, res, next) => {
-  res.status(404).send({ message: "Route not found" });
 });
 
 //routes
